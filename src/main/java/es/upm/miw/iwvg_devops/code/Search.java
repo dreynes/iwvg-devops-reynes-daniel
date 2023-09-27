@@ -21,4 +21,16 @@ public class Search {
                 .get();
     }
 
+    public Fraction findFractionMultiplicationByUserFamilyName(String familyName) {
+        return new UsersDatabase().findAll()
+                .filter(user -> familyName.equals(user.getFamilyName()))
+                .flatMap(user -> user.getFractions().stream())
+                .reduce(new Fraction(1, 1),
+                        (accumulator, fraction) -> {
+                            accumulator = accumulator.multiply(fraction);
+                            return accumulator;
+                        }
+                );
+    }
+
 }
