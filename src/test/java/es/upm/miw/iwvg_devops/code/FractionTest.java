@@ -61,4 +61,44 @@ public class FractionTest {
         fraction1.setNumerator(8);
         assertEquals(8, fraction1.getNumerator());
     }
+
+
+    @Test
+    void testFractionIsProper() {
+        assertTrue(fraction1.isProper());
+    }
+
+    @Test
+    void testFractionIsImproper() {
+        assertTrue(fraction0.isImproper());
+    }
+
+    @Test
+    void testFractionIsEquivalent() {
+        assertTrue(fraction1.isEquivalent(new Fraction(2, 4)));
+    }
+
+    @Test
+    void testFractionAdd() {
+        Fraction fractionAdd = new Fraction(1, 2);
+        Fraction result = new Fraction(1, 1);
+        assertTrue(result.isEquivalent(fraction1.add(fractionAdd)));
+    }
+
+    @Test
+    void testFractionMultiply() {
+        Fraction multyFraction = new Fraction(2, 3);
+        Fraction fractionAux = new Fraction(1, 2);
+        Fraction result = new Fraction(2, 6);
+        assertTrue(result.isEquivalent(fractionAux.multiply(multyFraction)));
+    }
+
+    @Test
+    void testFractionDivide() {
+        Fraction result1 = new Fraction(1, 1);
+
+        assertTrue(result1.isEquivalent(fraction1.divide(fraction1)));
+
+    }
+
 }
