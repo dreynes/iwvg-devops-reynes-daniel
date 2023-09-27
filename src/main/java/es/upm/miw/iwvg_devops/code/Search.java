@@ -33,4 +33,10 @@ public class Search {
                 );
     }
 
+    public static Stream<String> findUserFamilyNameByAllNegativeSignFractionDistinct() {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream().anyMatch(Fraction::isNegative))
+                .map(User::getFamilyName);
+    }
+
 }
