@@ -88,6 +88,12 @@ public class Fraction {
                 this.getDenominator() * fraction.getDenominator());
     }
 
+
+    public Fraction divide(Fraction fraction) {
+        return new Fraction(this.getNumerator() * fraction.getDenominator(),
+                this.getDenominator() * fraction.getNumerator());
+    }
+
     public Fraction higher(Fraction fraction){
         if(this.decimal() < fraction.decimal())
             return fraction;
@@ -95,11 +101,10 @@ public class Fraction {
             return this;
     }
 
-    public Fraction divide(Fraction fraction) {
-        return new Fraction(this.getNumerator() * fraction.getDenominator(),
-                this.getDenominator() * fraction.getNumerator());
-    }
-
+   public boolean isNegative(){
+        return (this.getDenominator()<0 && this.getNumerator()>0) ||
+                (this.getDenominator()>0 && this.getNumerator()<0);
+   }
 
 }
 
