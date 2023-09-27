@@ -16,6 +16,11 @@ public class SearchTest {
         assertTrue( new Fraction(2,1).isEquivalent(new Search().findHighestFraction()));
     }
 
+    @Test
+    void testFindFractionMultiplicationByUserFamilyName(){
+        assertTrue(new Fraction(0,1).isEquivalent(new Search().findFractionMultiplicationByUserFamilyName("Fernandez")));
+    }
+
 }
 
 
