@@ -89,7 +89,7 @@ public class Fraction {
     }
 
     public Fraction higher(Fraction fraction){
-        if(this.decimal()<fraction.decimal())
+        if(this.decimal() < fraction.decimal())
             return fraction;
         else
             return this;
